@@ -10,7 +10,7 @@ use std::sync::Mutex;
 use tauri::api::dialog::{message, FileDialogBuilder};
 use tauri::api::process::{Command, CommandEvent};
 use tauri::State;
-use tauri::{CustomMenuItem, Manager, Menu, MenuItem, Submenu, Wry};
+use tauri::{CustomMenuItem, Manager, Menu, MenuItem, Submenu};
 use tempdir::TempDir;
 
 /// Represents a decrypted resdesc file that has gone through ttarchext
@@ -40,7 +40,7 @@ fn decrypt_resdesc_file(path: &str) -> Result<Content, String> {
     // lives in tauri.conf.json
     let (mut rx, _) = Command::new_sidecar("ttarchext")
         .map_err(|_| "Unable to create ttarchext sidecar!")?
-        .args(["67", &path, temp_path_name])
+        .args(["67", path, temp_path_name])
         .spawn()
         .map_err(|_| "Unable to spawn ttarchext process!")?;
 
