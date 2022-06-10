@@ -1,0 +1,21 @@
+{
+  "name": "telltale-resdesc-viewer",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "tauri:dev": "tauri dev",
+    "build": "vite build",
+    "tauri:build": "tauri build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-rc.13",
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.0-rc.6",
+    "highlight.js": "^11.5.1"
+  }
+}
